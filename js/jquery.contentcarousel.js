@@ -9,7 +9,7 @@
 					
 				if( cache.expanded ) {
 					scroll		= 1; // scroll is always 1 in full mode
-					factor		= 3; // the width of the expanded item will be 3 times bigger than 1 collapsed item	
+					factor		= 4; // the width of the expanded item will be 4 times bigger than 1 collapsed item	
 					idxClicked	= cache.idxClicked; // the index of the clicked item
 				}
 				
@@ -51,7 +51,7 @@
 				cache.winpos		= aux.getWinPos( $item.position().left, cache );
 				$wrapper.find('div.ca-item').not( $item ).hide();
 				$item.find('div.ca-content-wrapper').css( 'left', cache.itemW + 'px' ).stop().animate({
-					width	: cache.itemW * 2 + 'px',
+					width	: cache.itemW * 3 + 'px',
 					left	: cache.itemW + 'px'
 				}, opts.itemSpeed, opts.itemEasing)
 				.end()
@@ -62,7 +62,7 @@
 					cache.isAnimating	= false;
 					cache.expanded		= true;
 					
-					aux.openItems( $wrapper, $item, opts, cache );
+					 aux.openItems( $wrapper, $item, opts, cache );
 				});
 						
 			},
@@ -75,9 +75,9 @@
 						idx		= $item.index();
 					
 					if( idx !== openedIdx ) {
-						$item.css( 'left', - ( openedIdx - idx ) * ( cache.itemW * 3 ) + 'px' ).show().find('div.ca-content-wrapper').css({
+						$item.css( 'left', -(openedIdx-idx)*(cache.itemW*4) + 'px' ).show().find('div.ca-content-wrapper').css({
 							left	: cache.itemW + 'px',
-							width	: cache.itemW * 2 + 'px'
+							width	: cache.itemW * 3 + 'px'
 						});
 						
 						// hide more link
@@ -126,13 +126,14 @@
 					}
 				});
 			},
-			// gets the item's position (1, 2, or 3) on the viewport (the visible items)
+			// gets the item's position (1, 2, 3, or 4) on the viewport (the visible items)
 			// val is the left of the item
 			getWinPos	: function( val, cache ) {
 				switch( val ) {
 					case 0 					: return 1; break;
 					case cache.itemW 		: return 2; break;
 					case cache.itemW * 2 	: return 3; break;
+					case cache.itemW * 3 	: return 4; break;
 				}
 			}
 		},
@@ -159,7 +160,8 @@
 						var $el 			= $(this),
 							$wrapper		= $el.find('div.ca-wrapper'),
 							$items			= $wrapper.children('div.ca-item'),
-							cache			= {};
+							cache			= {},
+							maxViewable		= 4;
 						
 						// save the with of one item	
 						cache.itemW			= $items.width();
@@ -167,19 +169,19 @@
 						cache.totalItems	= $items.length;
 						
 						// add navigation buttons
-						if( cache.totalItems > 3 )	
+						if( cache.totalItems > maxViewable )	
 							$el.prepend('<div class="ca-nav"><span class="ca-nav-prev">Previous</span><span class="ca-nav-next">Next</span></div>')	
 						
 						// control the scroll value
 						if( settings.scroll < 1 )
 							settings.scroll = 1;
-						else if( settings.scroll > 3 )
-							settings.scroll = 3;	
+						else if( settings.scroll > maxViewable )
+							settings.scroll = maxViewable;	
 						
 						var $navPrev		= $el.find('span.ca-nav-prev'),
 							$navNext		= $el.find('span.ca-nav-next');
 						
-						// hide the items except the first 3
+						// hide the items except the first 4
 						$wrapper.css( 'overflow', 'hidden' );
 						
 						// the items will have position absolute 

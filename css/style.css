@@ -99,8 +99,8 @@ p{
 .ca-container{
 	position:relative;
 	margin:25px auto 20px auto;
-	width:1005px;
-	height:425px;
+	width:1340px;
+	height:600px;
 }
 .ca-wrapper{
 	width:100%;
@@ -260,7 +260,7 @@ p{
 	background: #e1e1e5;
 	position: absolute;
 	width: 0px; /* expands to width of the wrapper minus 1 element */
-	height: 417px;
+	height: 592px;
 	text-align: left;
 	z-index: 10000;
 	overflow: hidden;

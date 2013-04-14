@@ -12,12 +12,14 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.css" media="all" />              
         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href="themes/1/js-image-slider.css" rel="stylesheet" type="text/css" />
+    	<link href="generic.css" rel="stylesheet" type="text/css" />
+
 
     </head>
     <body>
 	<div class="header"><h1>Welcome to DAAP Works 2013</h1></div>
-		
-        
+
         <div id="ca-container" class="ca-container">
 			<div class="ca-wrapper">
 
@@ -32,6 +34,8 @@
 							<div class="ca-content">
 								<h6>Helping children learn care routines with a companion app for pet foster programs.</h6>
 								<a href="#" class="ca-close">close</a>
+								<div class="ca-content-images">
+								</div>
 								<div class="ca-content-text">
 									<p>Children often want pets, but are turned off by the responsibilities. This mobile task management app helps kids age 9 to 12 track pet care chores and learn their animal’s daily needs. The app complements pet foster programs lasting a fixed period of time. After completing the program, the parents receive the child’s results, opening opportunities for discussion on the family’s pet readiness.</p>
                  <p>A proud Kentuckian, Alyssa discovered design through years of art classes. Through co-ops, she came to love interaction design. She also likes cooking, traveling, yoga, concerts, drumming, cats, dogs, and making zombie plans. Alyssa values optimism and patience, which explains her devotion to Cincinnati's professional sports teams. She knows LaRosa's pizza and Skyline Chili are the keys to world peace, and she's unsure if she looks good in hats.</p>
@@ -403,6 +407,18 @@
 
 			</div>
 		</div>
+
+		<div id="sliderFrame">
+	        <div id="slider">
+	            <a href="http://www.menucool.com/jquery-slider" target="_blank">
+	                <img src="images/Hans_glamour.jpg" alt="Suck on deez nuts" />
+	            </a>
+	            <img src="images/Hans_process1.jpg" alt="I hate Alyssa." />
+	            <img src="images/Hans_process1.jpg" alt="#shestheworst" />
+	        </div>
+	    </div>
+
+
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 		<!-- the jScrollPane script -->
@@ -411,5 +427,6 @@
 		<script type="text/javascript">
 			$('#ca-container').contentcarousel();
 		</script>
+		<script type="text/javascript" src="js/js-image-slider.js"></script>
     </body>
 </html>
