@@ -90,8 +90,10 @@ p{
 /* Circular Content Carousel Style */
 .header{
 	position:relative;
-	margin:25px auto 20px auto;
-	width:1005px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:50px;
+	width:1340px;
 	text-align:left;
 	
 }
@@ -100,7 +102,7 @@ p{
 	position:relative;
 	margin:25px auto 20px auto;
 	width:1340px;
-	height:600px;
+	height:478px;
 }
 .ca-wrapper{
 	width:100%;
@@ -260,7 +262,7 @@ p{
 	background: #e1e1e5;
 	position: absolute;
 	width: 0px; /* expands to width of the wrapper minus 1 element */
-	height: 592px;
+	height: 470px;
 	text-align: left;
 	z-index: 10000;
 	overflow: hidden;
@@ -270,7 +272,7 @@ p{
 	left:5px;
 }
 .ca-content{
-	width:660px;
+	width:1010px;
 	overflow:hidden;
 }
 .ca-content-text{
@@ -280,6 +282,21 @@ p{
 	margin:10px 20px;
 	padding:10px 20px;
 	line-height:24px;
+}
+
+/* Text within a content block */
+.textfield{
+	font-size: 14px;
+	font-style: italic;
+	font-family: "Lato",Helvetica Neue,serif;
+	line-height:16px;
+	width: 310px;
+	margin-left: 20px;
+	margin-top:0px;
+	height:338px;
+	float:left;
+	
+		
 }
 .ca-content-text p{
 	padding-bottom:5px;
@@ -298,6 +315,14 @@ p{
 .ca-content ul{
 	margin:20px 35px;
 	height:30px;
+}
+
+ul.bullshit{
+	float:left;
+	height:30px;
+	margin-left:20px;
+	margin-right:0;
+	margin-top:-22px;
 }
 .ca-content ul li{
 	float:left;
