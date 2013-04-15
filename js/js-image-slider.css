@@ -7,10 +7,10 @@
 	float:left;
 	width:600px;
 	height:465px;
-	padding-top:0px;
+	padding:
 	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
 
-        
+/* UGH DEFINE ALL THESE GOOD-DANG SLIDERS*/
 #slider {
     width:600px;height:338px;/* Make it the same size as your images */
 	background:#fff url(loading.gif) no-repeat 50% 50%;
@@ -19,15 +19,7 @@
 	margin:0 auto;/*make the image slider center-aligned */
 }
 
-/* Define a slider */
-#sliderFrame2 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
-        
+  
 #slider2 {
     width:600px;height:338px;/* Make it the same size as your images */
 	background:#fff url(loading.gif) no-repeat 50% 50%;
@@ -35,16 +27,6 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-
-
-/* Define a slider */
-#sliderFrame3 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
         
 #slider3 {
     width:600px;height:338px;/* Make it the same size as your images */
@@ -53,15 +35,7 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame4 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
-        
+   
 #slider4 {
     width:600px;height:338px;/* Make it the same size as your images */
 	background:#fff url(loading.gif) no-repeat 50% 50%;
@@ -69,14 +43,6 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame5 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
         
 #slider5 {
     width:600px;height:338px;/* Make it the same size as your images */
@@ -85,15 +51,7 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame6 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
-        
+  
 #slider6 {
     width:600px;height:338px;/* Make it the same size as your images */
 	background:#fff url(loading.gif) no-repeat 50% 50%;
@@ -101,14 +59,6 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame7 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
         
 #slider7 {
     width:600px;height:338px;/* Make it the same size as your images */
@@ -117,14 +67,6 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame8 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
         
 #slider8 {
     width:600px;height:338px;/* Make it the same size as your images */
@@ -133,14 +75,6 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame9 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
         
 #slider9 {
     width:600px;height:338px;/* Make it the same size as your images */
@@ -149,15 +83,7 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame10 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
-        
+    
 #slider10 {
     width:600px;height:338px;/* Make it the same size as your images */
 	background:#fff url(loading.gif) no-repeat 50% 50%;
@@ -165,14 +91,6 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame11 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
         
 #slider11 {
     width:600px;height:338px;/* Make it the same size as your images */
@@ -181,14 +99,6 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame12 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
         
 #slider12 {
     width:600px;height:338px;/* Make it the same size as your images */
@@ -197,14 +107,6 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame13 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
         
 #slider13 {
     width:600px;height:338px;/* Make it the same size as your images */
@@ -213,14 +115,6 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame14 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
         
 #slider14 {
     width:600px;height:338px;/* Make it the same size as your images */
@@ -229,14 +123,6 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame15 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
         
 #slider15 {
     width:600px;height:338px;/* Make it the same size as your images */
@@ -245,14 +131,6 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame16 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
         
 #slider16 {
     width:600px;height:338px;/* Make it the same size as your images */
@@ -261,14 +139,6 @@
 
 	margin:0 auto;/*make the image slider center-aligned */
 }
-/* Define a slider */
-#sliderFrame17 {
-	float:left;
-	width:600px;
-	height:465px;
-	padding-top:0px;
-	} /*remove the "margin:0 auto;" if you want to align the whole slider to the left side*/
-
         
 #slider17 {
     width:600px;height:338px;/* Make it the same size as your images */

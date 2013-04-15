@@ -280,8 +280,8 @@ p{
 	font-size: 14px;
 	font-style: italic;
 	font-family: "Lato",Helvetica Neue,serif;
-	margin:10px 20px;
-	padding:10px 20px;
+	margin:10px 35px;
+	/*padding:10px 20px;*/
 	line-height:24px;
 }
 
@@ -318,7 +318,7 @@ p{
 	height:30px;
 }
 
-ul.bullshit{
+ul.launch-button{
 	float:left;
 	height:30px;
 	margin-left:20px;
