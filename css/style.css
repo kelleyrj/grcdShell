@@ -45,6 +45,7 @@ abbr,acronym { border:0;
   font-family: "Lato", Helvetica Neue, sans-serif !important;
   font-style: normal;
   color: #404041 !important;
+  background-image: url();
 }
 
 ul {
@@ -64,7 +65,7 @@ a{
 
 h1{
   font-size: 38px;
-  font-weight: 900;
+  font-weight: 200;
 }
 
 h2{
