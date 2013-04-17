@@ -16,7 +16,7 @@
 				// clone the elements on the right / left and append / prepend them according to dir and scroll
 				if( dir === 1 ) {
 					$wrapper.find('div.ca-item:lt(' + scroll + ')').each(function(i) {
-						$(this).clone(true).css( 'left', ( cache.totalItems - idxClicked + i ) * cache.itemW * factor + 'px' ).appendTo( $wrapper );
+						jQuery.extend({}, $(this)).css( 'left', ( cache.totalItems - idxClicked + i ) * cache.itemW * factor + 'px' ).appendTo( $wrapper );
 					});
 				}
 				else {
@@ -24,7 +24,7 @@
 					
 					$wrapper.find('div.ca-item:gt(' + ( cache.totalItems  - 1 - scroll ) + ')').each(function(i) {
 						// insert before $first so they stay in the right order
-						$(this).clone(true).css( 'left', - ( scroll - i + idxClicked ) * cache.itemW * factor + 'px' ).insertBefore( $first );
+						jQuery.extend({}, $(this)).css( 'left', - ( scroll - i + idxClicked ) * cache.itemW * factor + 'px' ).insertBefore( $first );
 					});
 				}
 				
@@ -50,20 +50,38 @@
 				// the item's position (1, 2, or 3) on the viewport (the visible items) 
 				cache.winpos		= aux.getWinPos( $item.position().left, cache );
 				$wrapper.find('div.ca-item').not( $item ).hide();
-				$item.find('div.ca-content-wrapper').css( 'left', cache.itemW + 'px' ).stop().animate({
-					width	: cache.itemW * 3 + 'px',
-					left	: cache.itemW + 'px'
-				}, opts.itemSpeed, opts.itemEasing)
-				.end()
-				.stop()
-				.animate({
-					left	: '0px'
-				}, opts.itemSpeed, opts.itemEasing, function() {
-					cache.isAnimating	= false;
-					cache.expanded		= true;
-					
-					 aux.openItems( $wrapper, $item, opts, cache );
-				});
+				
+				$item
+//get the drawer
+					.find('div.ca-content-wrapper')
+						//reset drawer to where it should be
+					.css( 'left', cache.itemW + 'px' )
+					.stop()
+// animate the drawer
+					.animate(
+						{
+							width	: cache.itemW * 3 + 'px',
+							left	: cache.itemW + 'px'
+						},
+						opts.itemSpeed,
+						opts.itemEasing)
+					.end()
+					.stop()
+// animate the card
+					.animate(
+						{
+							left	: '0px'
+						},
+						opts.itemSpeed,
+						opts.itemEasing,
+//animate everything else
+						function()
+						{	
+							cache.isAnimating	= false;
+							cache.expanded		= true;
+							aux.openItems( $wrapper, $item, opts, cache );
+						});
+				
 						
 			},
 			// opens all the items
@@ -75,12 +93,27 @@
 						idx		= $item.index();
 					
 					if( idx !== openedIdx ) {
-						$item.css( 'left', -(openedIdx-idx)*(cache.itemW*4) + 'px' ).show().find('div.ca-content-wrapper').css({
-							left	: cache.itemW + 'px',
-							width	: cache.itemW * 3 + 'px'
-						});
+						$item
+							.animate({
+								opacity : 0
+							},
+								1000,
+								opts.itemEasing)
+							.stop()
+							.css(
+							{
+								left 	: -(openedIdx-idx) * (cache.itemW*4) +'px',
+								opacity	: 1
+							})
+							.show()
+							.find('div.ca-content-wrapper')
+							.css(
+							{
+								left	: cache.itemW + 'px',
+								width	: cache.itemW * 3 + 'px'
+							});
 						
-						// hide more link
+						// hide the more button
 						aux.toggleMore( $item, false );
 					}
 				});
@@ -106,7 +139,7 @@
 					cache.expanded		= false;
 				});
 				
-				// show more link
+				// show more button
 				aux.toggleMore( $openedItem, true );
 				
 				$wrapper.find('div.ca-item').each(function(i) {
@@ -143,10 +176,10 @@
 				if( this.length ) {
 					
 					var settings = {
-						sliderSpeed		: 500,			// speed for the sliding animation
-						sliderEasing	: 'easeOutExpo',// easing for the sliding animation
+						sliderSpeed		: 300,			// speed for the sliding animation
+						sliderEasing	: 'easeInExpo',// easing for the sliding animation
 						itemSpeed		: 500,			// speed for the item animation (open / close)
-						itemEasing		: 'easeOutExpo',// easing for the item animation (open / close)
+						itemEasing		: 'easeInExpo',// easing for the item animation (open / close)
 						scroll			: 1				// number of items to scroll at a time
 					};
 					
@@ -163,14 +196,14 @@
 							cache			= {},
 							maxViewable		= 4;
 						
-						// save the with of one item	
+						// save the width of one item	
 						cache.itemW			= $items.width();
 						// save the number of total items
 						cache.totalItems	= $items.length;
 						
 						// add navigation buttons
 						if( cache.totalItems > maxViewable )	
-							$el.prepend('<div class="ca-nav"><span class="ca-nav-prev">Previous</span><span class="ca-nav-next">Next</span></div>')	
+							$el.prepend('<div class="ca-nav"><span class="ca-nav-prev">Previous</span><span class="ca-nav-next">Next</span></div>');
 						
 						// control the scroll value
 						if( settings.scroll < 1 )

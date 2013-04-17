@@ -134,6 +134,8 @@ p{
 	text-align:center;
 	color: white;
 	font-family: "Lato",Helvetica Neue,serif;
+	font-style: italic;
+	text-decoration: none;
 }
 .ca-close{
 	position:absolute;
@@ -335,7 +337,7 @@ p{
 	margin-top:-22px;
 }
 
-.ca-content ul.launch-button a{
+.ca-content ul.launch-button li a{
 	color:#fff;
 	background:#404041;
 	padding:4px 15px;
@@ -343,8 +345,8 @@ p{
 	bottom: 10px;
 	right: 0px;
 	font-family: "Lato",Helvetica Neue,serif;
+	font-style: italic;
 	text-align:center;
-	font-style:italic;
 	text-decoration: none;
 }
 
@@ -361,7 +363,6 @@ p{
 	right: 0px;
 	font-family: "Lato",Helvetica Neue,serif;
 	text-align:center;
-	font-style:italic;
 }
 .ca-content ul li a:hover{
 	background:#404041;
