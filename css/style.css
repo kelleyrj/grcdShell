@@ -200,30 +200,35 @@ p{
 }
 
 .ca-item-9 .ca-icon{
+	background-image:url(../portraits/eric_gentry.jpg);
+}
+
+.ca-item-10 .ca-icon{
 	background-image:url(../portraits/kiran_singh.jpg);
 }
-.ca-item-10 .ca-icon{
+
+.ca-item-11 .ca-icon{
 	background-image:url(../portraits/jared_fite.jpg);
 }
-.ca-item-11 .ca-icon{
+.ca-item-12 .ca-icon{
 	background-image:url(../portraits/jesse_prehodick.jpg);
 }
-.ca-item-12 .ca-icon{
+.ca-item-13 .ca-icon{
 	background-image:url(../portraits/matt_pemberton.jpg);
 }
-.ca-item-13 .ca-icon{
+.ca-item-14 .ca-icon{
 	background-image:url(../portraits/mac_clenney.jpg);
 }
-.ca-item-14 .ca-icon{
+.ca-item-15 .ca-icon{
 	background-image:url(../portraits/meredith_meg.jpg);
 }
-.ca-item-15 .ca-icon{
+.ca-item-16 .ca-icon{
 	background-image:url(../portraits/kaity_hammerstein.jpg);
 }
-.ca-item-16 .ca-icon{
+.ca-item-17 .ca-icon{
 	background-image:url(../portraits/kyle_baker.jpg);
 }
-.ca-item-17 .ca-icon{
+.ca-item-18 .ca-icon{
 	background-image:url(../portraits/ryan_arthur.jpg);
 }
 
