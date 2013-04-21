@@ -1,0 +1,120 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+	<head> 
+		<link rel="stylesheet" type="text/css" href="styleRegistration.css">
+
+		<meta charset="utf-8"> 
+
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+
+		<script type="text/javascript">
+			window.onload = function()
+                {
+                   document.getElementById('headerRight').innerHTML = "WELCOME, " + localStorage.bandName;
+                };
+		</script>
+
+		<style type="text/css" media="screen">
+		</style>
+
+	</head> 
+	<body> 
+		<div id="topBar">
+			<div id="logoContainer">
+				<div id="miniLogo" class="floatLeft">
+					<a href="index.html"><img src="images/minilogo.png"></a>
+				</div>
+				<div id="headerRight" class="floatRight">WELCOME</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+			
+		<div id="wrapper">
+			
+			<div class="container">
+				
+				<div id="stepContainer">
+					<div id="greyLine">
+					</div>
+					<div id="stepText">
+						Step 3 of 4
+					</div>
+					<div id="greyLine">
+					</div>
+				</div>
+
+				<div id="inputContainerNetworks" class="floatLeft">
+					<div class="inputLabelText">
+						<label> connect ontour with my band's following networks: </label>
+					</div>
+					<div class="clear">
+						</div>
+					<div id="iconContainer">
+						<div id="networkIcon1" class="floatLeft">
+							<a href="#"><img src="images/networkBtn_off.png" class="img-swap"></a>
+						</div>
+						<div id="networkIcon2" class="floatLeft">
+							<a href="#"><img src="images/networkBtn2_off.png" class="img-swap"></a>
+						</div>
+						<div id="networkIcon3" class="floatLeft">
+							<a href="#"><img src="images/networkBtn3_off.png" class="img-swap"></a>
+						</div>
+						<div id="networkIcon4" class="floatLeft">
+							<a href="#"><img src="images/networkBtn4_off.png" class="img-swap"></a>
+						</div>
+						<div id="networkIcon5" class="floatLeft">
+							<a href="#"><img src="images/networkBtn5_off.png" class="img-swap"></a>
+						</div>
+
+						<script>
+						$(function(){
+						  $(".img-swap").live('click', function() {
+						    if ($(this).attr("class") == "img-swap") {
+						      this.src = this.src.replace("_off","_on");
+						    } else {
+						      this.src = this.src.replace("_on","_off");
+						    }
+						    $(this).toggleClass("on");
+						  });
+						});
+
+						</script>
+
+					</div>
+				</div>
+				<div class="clear">
+				</div>
+				<div id="networkInputContainer" class="floatLeft">
+					<div id="inputContainerLeft" class="floatLeft">
+						<div class="previousBtnNetworks">
+							<a href="register2.html"><img src="images/previousBtn.png"></a>
+						</div>
+					</div>
+					<div id="inputContainerLeft2" class="floatLeft">
+						
+						<a href="register4.html">
+						<div id="nextBtnNetworks">
+							<button class="nextBtn" type="submit" name="step1next" value="bar">
+						  		<img src="images/nextBtn.png">
+						  	</button>
+						</div>
+						</a>
+					</div>
+				</div>
+				<div class="clear">
+				</div>
+				
+			<div id="footer" class="footerAdjust">
+					<div id="footerLinks">
+						<a href="#">User Agreement  </a> - <a href="#">About Us</a> - <a href="#">  Contact</a>
+					</div>
+				</div>	
+			</div>
+			
+		</div>
+		
+
+	</body> 
+</html>
+

@@ -1,0 +1,56 @@
+<html>
+<head>
+<title> Local Storage </title>
+<style type="text/css">
+
+body { background:#cccccc; 
+		color:#ffffff;
+		padding:200px;
+	}
+
+</style>
+
+<meta name="robots" content="noindex">
+
+</head>
+
+<body>
+<script type="text/javascript">
+
+window.onload = function()
+                {
+                   document.getElementById('QuestionDiv').innerHTML = localStorage.firstname;
+                };
+
+function clearResults() {
+localStorage.firstname = "Doug";
+//localStorage.clear();
+}
+
+
+function show_alert() {
+
+document.getElementById('QuestionDiv').innerHTML = localStorage.firstname;
+
+alert(localStorage.firstname);
+}
+
+
+</script>
+<br><br><br>
+<div align="center">
+<div id="QuestionDiv"> How Gay is Colin? </div>
+<form name="myForm">
+
+
+<input type="button" id="" value="Recall" onclick="show_alert()" />
+
+<input type="button" id="" value="Clear" onclick="clearResults()" />
+
+</form>
+
+
+</div>
+
+</body>
+</html>

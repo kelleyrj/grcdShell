@@ -1,0 +1,49 @@
+<html>
+<head>
+<title> Local Storage </title>
+<style type="text/css">
+
+body { background:#cccccc; 
+		color:#eeeeee;
+		padding:200px;
+	}
+
+</style>
+
+<meta name="robots" content="noindex">
+
+</head>
+
+<body>
+<script>
+
+
+function OnSubmit() {
+
+var mom = document.myForm.gayAnswer.value;
+localStorage.firstname = mom;
+
+}
+
+function show_alert() {
+
+alert(localStorage.firstname);
+}
+
+
+</script>
+<br><br><br>
+<div align="center">
+<p> How Gay Is Colin? </p>
+<form name="myForm" method="get" action="_DougTestLINK.html" rel="external" data-ajax="false">
+<input type="text" name="gayAnswer" />
+<input type="submit" onclick="OnSubmit()" />
+
+
+</form>
+
+
+</div>
+
+</body>
+</html>

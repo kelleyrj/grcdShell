@@ -1,0 +1,174 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+	<head> 
+		<link rel="stylesheet" type="text/css" href="styleRegistration.css">
+
+		<meta charset="utf-8"> 
+
+		  
+
+		  <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+
+
+
+		<script type="text/javascript">
+			window.onload = function()
+                {
+                  // document.getElementById('headerRight').innerHTML = "WELCOME, " + localStorage.bandName;
+                };
+		
+			function OnNext1() {
+
+				var bandN = document.myForm.name.value;
+				localStorage.bandName = bandN;
+
+				var homeT = document.myForm.hometown.value;
+				localStorage.hometown = homeT;
+
+				var bandD = document.myForm.banddescription.value;
+				localStorage.banddescription = bandD;
+
+			}
+
+			
+</script>
+
+
+		
+		
+
+		<style type="text/css" media="screen">
+		</style>
+
+	</head> 
+	<body>
+		<div id="topBar">
+			<div id="logoContainer">
+				<div id="miniLogo" class="floatLeft">
+					<a href="index.html"><img src="images/minilogo.png"></a>
+				</div>
+				<div id="headerRight" class="floatRight">WELCOME</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div id="facebox">
+			  <div>
+
+			    <h2>OnTour</h2>
+
+			   <p><strong>1. Register Your Band</strong><br />
+			      OnTour is a web application that helps bands plan tours. Begin by filling out the registration information. This information will be given to bands and venues in the cities you would like to tour. The more thorough you are, the better your odds at booking great gigs!<br /><br />
+			      <strong>2. Plan Your Tour</strong><br />
+			      Once your band information is registered, you will plan your trip! Once a route is selected, you can start selecting bands and venues to contact for booking.<br /><br />
+			    </p>
+			    <!-- yes/no buttons -->
+			    <p>
+			      <button class="close"> <img src="images/okayBtn.png"></button>
+			    </p>
+			  </div>
+			</div>
+
+			<script>
+			$(document).ready(function() {
+			  $("#open_now").click(function() {
+			      $("#facebox").overlay().load();
+			  });
+
+			    // select the overlay element - and "make it an overlay"
+			  $("#facebox").overlay({
+
+			    // custom top position
+			    top: 260,
+
+			    // some mask tweaks suitable for facebox-looking dialogs
+			    mask: {
+
+			    // you might also consider a "transparent" color for the mask
+			    color: '#fff',
+
+			    // load mask a little faster
+			    loadSpeed: 200,
+
+			    // very transparent
+			    opacity: 0.5
+			    },
+
+			    // disable this for modal dialog-type of overlays
+			    closeOnClick: false,
+
+			    // load it immediately after the construction
+			    load: true
+
+			    });
+			    });
+			</script>
+		<div id="wrapper">
+
+			
+			
+			<div class="container">
+
+				<div id="stepContainer">
+					<div id="greyLine">
+					</div>
+					<div id="stepText">
+						Step 1 of 4
+					</div>
+					<div id="greyLine">
+					</div>
+				</div>
+
+				<div id="inputContainer">
+					<div id="inputContainerLeft" class="floatLeft">
+						
+						<form name="myForm" action="register2.html">
+						
+						
+							<div class="inputLabelText">
+								<label for="name"> What is the name of your band? </label>
+							</div>
+						
+						
+						  <input type="text" name="name" onfocus="if(this.value=='') {this.value='', this.style.color='#000'};" onblur="if(this.value=='') {this.value='', this.style.color='#ccc';}"><br>
+						 
+						 
+						  <div class="inputLabelText">
+								<label for="hometown"> Where are you from? </label>
+							</div>
+						 
+						 
+						  <input id="myHometown" type="text" name="hometown" value="City, State"  onfocus="if(this.value=='City, State') {this.value='', this.style.color='#000'};" onblur="if(this.value=='') {this.value='City, State', this.style.color='#ccc';}"><br>
+
+						
+					</div>
+					
+					
+					<div id="inputContainerLeft" class="floatLeft">
+						
+							<div class="inputLabelText">
+								Describe yourself briefly
+							</div>
+						  <textarea rows="10" cols="30" name="banddescription"></textarea><br>
+						  	<button class="nextBtn" type="submit" onclick="OnNext1()" name="step1next" value="bar">
+						  		<img src="images/nextBtn.png">
+						  	</button>
+
+						</form>
+					</div>
+				</div>
+				<div id="footer" class="footerAdjust">
+					<div id="footerLinks">
+						<a href="#">User Agreement  </a> - <a href="#">About Us</a> - <a href="#">  Contact</a>
+					</div>
+				</div>	
+			</div>
+		</div>
+		
+	</body> 
+</html>
+
+
+
+
+

@@ -1,0 +1,2422 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+	<head> 
+
+		  <meta charset="utf-8" />
+		  <title>On Tour</title>
+		  
+		  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+		  
+		   <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbaFIKXS-UVEEcflT-LM9pcmp7xOvTxDI&sensor=true">
+    </script>
+
+		  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		  
+		  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+		  <script type="text/javascript" src="js/maps.js"></script>
+		  <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+
+
+		  
+		  
+		  <link rel="stylesheet" href="/resources/demos/style.css" />
+
+		  	<script type="text/javascript">
+		  		window.onload = function()
+                {
+                   document.getElementById('headerRight').innerHTML = "WELCOME, " + localStorage.bandName;
+                };
+
+                window.onload = function()
+
+                {
+                    $('#selectingContainer2').addClass("hideContainer");
+					$('#selectingContainer3').addClass("hideContainer");
+					$('#selectingContainer4').addClass("hideContainer");
+					$('#selectingContainer5').addClass("hideContainer");
+
+                  
+                };
+                
+		</script>
+
+		
+		 
+		
+		<link rel="stylesheet" type="text/css" href="styleRegistration.css">
+
+		<meta charset="utf-8"> 
+
+		</script>
+
+
+    
+	</head> 
+	<body> 
+		<div id="topBar">
+			<div id="logoContainer">
+				<div id="miniLogo" class="floatLeft">
+					<a href="index.html"><img src="images/minilogo.png"></a>
+				</div>
+				<div id="headerRight" class="floatRight">WELCOME</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+
+		<div id="facebox">
+			  <div>
+			    <h2>OnTour</h2>
+			   <p><strong>Selecting Bands and Venues to Email</strong><br />
+			      Tab through each date you will be playing shows. <span>Drag the marker on the map</span> to the cities you wish to play along your route. From there, select the bands and venues you wish you contact in each city. To ensure the best show possible, be sure to read their descriptions before making your selections. Pair yourself with the bands you think will compliment your sound, and choose venues you think are appropriate. Maybe a Jazz Club isn't right for your thrash metal band.
+			      <br /><br />
+			    </p>
+			    <!-- yes/no buttons -->
+			    <p>
+			      <button class="close"> <img src="images/okayBtn.png"></button>
+			    </p>
+			  </div>
+			</div>
+
+			<script>
+			$(document).ready(function() {
+			  $("#open_now").click(function() {
+			      $("#facebox").overlay().load();
+			  });
+
+			    // select the overlay element - and "make it an overlay"
+			  $("#facebox").overlay({
+
+			    // custom top position
+			    top: 260,
+
+			    // some mask tweaks suitable for facebox-looking dialogs
+			    mask: {
+
+			    // you might also consider a "transparent" color for the mask
+			    color: '#fff',
+
+			    // load mask a little faster
+			    loadSpeed: 200,
+
+			    // very transparent
+			    opacity: 0.5
+			    },
+
+			    // disable this for modal dialog-type of overlays
+			    closeOnClick: false,
+
+			    // load it immediately after the construction
+			    load: true
+
+			    });
+			    });
+			</script>
+		<div id="wrapper">	
+			<div class="container">
+			<div id="map_canvas">
+
+			</div>
+			
+
+
+				<div id="leftColumn" class="floatLeft">
+				<div id="datesContainerDH1" class="floatLeft">
+				
+				<div id="tourDatesDH1" class="normalstate">
+				
+						<div id="numbers"class="floatLeft">
+							1
+						</div>
+						<div class="dateText floatLeft">
+						March 30<br />  <div id="field_name">Chicago, IL</div>
+						</div>
+					</div>
+					<div class="clear">	
+				</div>
+				
+				<div id="tourDatesDH2" class="normalstate">
+						<div id="numbers"class="floatLeft">
+							2
+						</div>
+						<div class="dateText floatLeft">
+						March 31<br /><div id="two_name">+Add City</div>
+						</div>
+					</div>
+					<div class="clear">	
+				</div>
+				
+				<div id="tourDatesDH3" class="normalstate">
+						<div id="numbers"class="floatLeft">
+							3
+						</div>
+						<div class="dateText floatLeft">
+						April 1<br /><div id="three_name">+Add City</div>
+						</div>
+					</div>
+					<div class="clear">	
+				</div>
+				
+				<div id="tourDatesDH4" class="normalstate">
+						<div id="numbers"class="floatLeft">
+							4
+						</div>
+						<div class="dateText floatLeft">
+						April 2<br /><div id="four_name">+Add City</div>
+						</div>
+					</div>
+					<div class="clear">	
+				</div>
+				
+				<div id="tourDatesDH5" class="normalstate">
+						<div id="numbers"class="floatLeft">
+							5
+						</div>
+						<div class="dateText floatLeft">
+						April 3<br /><div id="end_name">Chicago, IL</div>
+						</div>
+					</div>
+					<div class="clear">	
+				</div>
+				
+				
+				
+				</div>		
+					
+					<!--
+					
+					<div id="datesContainer" class="floatLeft">
+					<ul>
+					<a href="#"><div id="tourDates">
+						<div id="numbers"class="floatLeft">
+							<img class="floatLeft" src="images/one.png">
+						</div>
+						<li>March 30<br />Cincinnati, OH</li>
+					</div></a>
+					<div class="clear">	
+					</div>
+
+
+
+					<div id="tourDates">
+						<div id="numbers"class="floatLeft">
+							<img class="floatLeft" src="images/one.png">
+						</div>
+						<li>March 30<br />Cincinnati, OH</li>
+					</div>
+					<div class="clear">	
+					</div>
+
+					<div id="tourDates">
+						<div id="numbers"class="floatLeft">
+							<img class="floatLeft" src="images/one.png">
+						</div>
+						<li>March 30<br />Cincinnati, OH</li>
+					</div>
+					<div class="clear">	
+					</div>
+
+					<div id="tourDates">
+						<div id="numbers"class="floatLeft">
+							<img class="floatLeft" src="images/one.png">
+						</div>
+						<li>March 30<br />Cincinnati, OH</li>
+					</div>
+					<div class="clear">	
+					</div>
+
+					<div id="tourDates">
+						<div id="numbers"class="floatLeft">
+							<img class="floatLeft" src="images/one.png">
+						</div>
+						<li>March 30<br />Cincinnati, OH</li>
+					</div>
+					<div class="clear">	
+					</div>
+
+					<div id="tourDates">
+						<div id="numbers"class="floatLeft">
+							<img class="floatLeft" src="images/one.png">
+						</div>
+						<li>March 30<br />Cincinnati, OH</li>
+					</div>
+					<div class="clear">	
+					</div>
+				</ul>
+				</div>
+				-->
+				
+				<div class="clear">	
+				</div>
+				
+			<div id="startContactingBtn">
+			<a href="emailTest.html"><img src="images/startContacting.png">
+			</div></a>
+			
+
+			
+			</div>  <!--   LEFT COLUMN    -->
+			
+<div id="selectingContainer">
+
+
+<div id="venueListContainer" class="floatLeft">
+			<div id="venueTitle">
+			Select <strong>venues</strong> to contact
+			</div>
+				<ul id="venueList">
+					<div class="venueItem tooltip">
+						<li>
+						<form class="selectBox" name="venueForm1">
+						<input class="selectButton floatLeft" type="checkbox" name="Motr" value="Motr">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								
+	
+<strong>Motr</strong><br/>33 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+							</input>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike" id="check2">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb2.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Northside Tavern</strong><br/>6 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb3.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>The Drinkery</strong><br/>88 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb4.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Twin Cinema</strong><br/>101 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb5.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>The Meetup</strong><br/>26 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb6.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Watering Hole</strong><br/>11 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb7.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>The Comet</strong><br/>63 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb8.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Lizard Lounge</strong><br/>22 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb9.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Bar Bar</strong><br/>31 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+				</ul>
+			</div>
+						
+			<div id="bandListContainer" class="floatLeft">
+			<div id="bandTitle">
+			Select <strong>bands</strong> to contact
+			</div>
+				<ul id="bandList">
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Pinegrove</strong><br/>Rock, R&B<br />209 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb2.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Snapdragon</strong><br/>Gospal, Spiritual<br />371 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb3.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>White Snow</strong><br/>Indie, Electronic<br />3,102 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb4.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Gods are Demons</strong><br/>Thrash, Metal<br />1,102 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb5.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Unicorn</strong><br/>Indie, Rock<br />712 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb6.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>We Are Giants</strong><br/>Folk, Indie<br />412 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb7.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Spiritualized</strong><br/>Shoegaze, Rock<br />281 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb8.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>In the Trees</strong><br/>Soft Rock, Traditional<br />2,012 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb9.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Sitting Duck</strong><br/>Rock, Hip Hop<br />991 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+				</ul>
+			</div>
+			</div>
+			
+			
+			<div id="selectingContainer2">
+
+<div id="venueListContainer" class="floatLeft">
+			<div id="venueTitle">
+			Select <strong>venues</strong> to contact
+			</div>
+				<ul id="venueList">
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb10.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								
+	
+<strong>Noe Theatre</strong><br/>57 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb11.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Music Hall</strong><br/>4 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb12.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Sunny Pete's</strong><br/>62 Reviews<div class="star"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb13.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>The Watershed</strong><br/>99 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb14.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Magic Theatre</strong><br/>14 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb15.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>123 Main</strong><br/>33 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb16.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Tonky Tonks</strong><br/>36 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb17.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Newport</strong><br/>55 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb18.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>White Rabbit</strong><br/>19 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+				</ul>
+			</div>
+						
+			<div id="bandListContainer" class="floatLeft">
+			<div id="bandTitle">
+			Select <strong>bands</strong> to contact
+			</div>
+				<ul id="bandList">
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb10.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Unknown Relatives</strong><br/>Rock, Indie<br />209 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb11.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Turtle Time</strong><br/>Electro, Metal<br />1,502 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb12.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>St. Petersburg</strong><br/>Folk, Rock<br />909 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb13.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Slow Motion Fighting</strong><br/>Country, Western<br />214 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb14.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Pop Empire</strong><br/>Psychedelic, Punk<br />514 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb15.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Little Trooper</strong><br/>Post Rock, Heavy<br />826 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb16.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Waltzing Matilda</strong><br/>Dubstep, Electronic<br />549 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb17.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Innocent Victim</strong><br/>Hip Hop, R&B<br />774 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb18.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Blinded Alley</strong><br/>Ambient, Electro<br />2,301 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+				</ul>
+			</div>
+			</div>
+			
+			
+			<div id="selectingContainer3">
+
+<div id="venueListContainer" class="floatLeft">
+			<div id="venueTitle">
+			Select <strong>venues</strong> to contact
+			</div>
+				<ul id="venueList">
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb19.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								
+	
+<strong>Heights Bar</strong><br/>4 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb20.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>West Side Records</strong><br/>61 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb21.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Japp's</strong><br/>25 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb22.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Tiki Lounge</strong><br/>51 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb23.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Brains Bar</strong><br/>57 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb24.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Uptown Cabaret</strong><br/>90 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb25.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Wishing Well</strong><br/>17 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb26.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>The Crowe</strong><br/>139 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb27.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Mac's</strong><br/>83 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+				</ul>
+			</div>
+						
+			<div id="bandListContainer" class="floatLeft">
+			<div id="bandTitle">
+			Select <strong>bands</strong> to contact
+			</div>
+				<ul id="bandList">
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb19.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Celestial Shore</strong><br/>Ambient, Spiritual<br />69 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb20.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>West Coast</strong><br/>Pop, Indie<br />906 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb21.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>TDR</strong><br/>Dance, Techno<br />551 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb22.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Knowing Sally</strong><br/>Classic Rock, Rock<br />327 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb23.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Lounge</strong><br/>Indie, Alternative<br />111 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb24.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Tumbleweed</strong><br/>Rock, Country<br />2,405 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb25.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Listen Up!</strong><br/>Pop, Indie<br />1,102 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb26.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Team Turbo</strong><br/>Thrash, Rock<br />659 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb27.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Evan's Collective</strong><br/>Folk, Rock<br />412 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+				</ul>
+			</div>
+			</div>
+			
+			<div id="selectingContainer4">
+
+<div id="venueListContainer" class="floatLeft">
+			<div id="venueTitle">
+			Select <strong>venues</strong> to contact
+			</div>
+				<ul id="venueList">
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb28.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								
+	
+<strong>Black Cats</strong><br/>93 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb29.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Top Hats</strong><br/>55 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb30.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Holy Grail</strong><br/>20 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb31.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Iron Lung</strong><br/>95 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb32.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Senate</strong><br/>66 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb33.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Southgate House</strong><br/>55 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb34.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Open Bar</strong><br/>33 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb35.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>LC Pavillion</strong><br/>214 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb36.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>System Audio</strong><br/>15 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+				</ul>
+			</div>
+						
+			<div id="bandListContainer" class="floatLeft">
+			<div id="bandTitle">
+			Select <strong>bands</strong> to contact
+			</div>
+				<ul id="bandList">
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb28.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>AstroPunks</strong><br/>Punk, Hardcore<br />292 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb29.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Woods</strong><br/>Folk, Indie<br />9,141 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb30.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>ColorFeels</strong><br/>Indie, Rock<br />619 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb31.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Snowmine</strong><br/>Folk, Indie<br />132 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb32.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Homemade Drugs</strong><br/>Rock, Punk<br />139 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb33.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Dreams</strong><br/>Ambient, Indie<br />491 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb34.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Rocky Whore</strong><br/>Heavy Metal, Punk<br />586 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb35.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Lizard King</strong><br/>Rock, Indie<br />777 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb36.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>My Valentine</strong><br/>Emo, Indie<br />12 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+				</ul>
+			</div>
+			</div>
+			
+			
+			<div id="selectingContainer5">
+
+<div id="venueListContainer" class="floatLeft">
+			<div id="venueTitle">
+			Select <strong>venues</strong> to contact
+			</div>
+				<ul id="venueList">
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb37.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								
+	
+<strong>Moon Lounge</strong><br/>91 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb38.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Blackbird</strong><br/>51 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb39.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Lucky 13</strong><br/>123 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb40.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Punky's</strong><br/>34 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb41.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>33 West Street</strong><br/>49 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb42.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Bar None</strong><br/>95 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb43.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Wreck It Room</strong><br/>20 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb44.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Town Bar</strong><br/>67 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="venueItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="venueThumbnail floatLeft">
+						<a href="#" class="tooltip">
+							<img src="images/venueThumb45.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="venuePreviewText floatLeft">
+								<strong>Leaf Theatre</strong><br/>71 Reviews<div class="star"><img src="images/star.png"><img src="images/star.png"><img src="images/star.png"></div>
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+				</ul>
+			</div>
+						
+			<div id="bandListContainer" class="floatLeft">
+			<div id="bandTitle">
+			Select <strong>bands</strong> to contact
+			</div>
+				<ul id="bandList">
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb37.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Youth Lagoon</strong><br/>Indie, Rock<br />412 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb38.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Bloodlust</strong><br/>Hardcore, Metal<br />142 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb39.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Missing Child</strong><br/>Rock, Classic<br />4,512 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb40.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Time Runner</strong><br/>Pop, Disco<br />812 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb41.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Lucky Luck</strong><br/>Indie, Pop<br />80 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb42.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Georgia Blue</strong><br/>Folk, Bluegrass<br />210 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb43.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>	
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Steel Thunder</strong><br/>Americana, Rock<br />714 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb44.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Neon Lights</strong><br/>Indie, Pop<br />789 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+					<div class="bandItem">
+						<li>
+						<form class="selectBox">
+						<input class="selectButton floatLeft" type="checkbox" name="vehicle" value="Bike">
+							<div class="bandThumbnail floatLeft">
+							<a href="#" class="tooltip">
+							<img src="images/bandThumb45.jpg">	
+							<span>
+							<b></b>
+		
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent fermentum pretium tellus, nec ullamcorper nibh rutrum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit 							molestie purus, suscipit mollis nunc tincidunt vitae. Suspendisse potenti. Suspendisse potenti. Duis nec risus erat, quis posuere erat. Donec imperdiet suscipit augue, a dignissim libero consectetur 							ut. <br /><br /><img src="images/facebook.png"><img 								class="twitter" src="images/twitter.png">
+							</span>
+						</a>		
+							</div>
+							<div class="bandPreviewText floatLeft">
+								<strong>Save the Date</strong><br/>Traditional, Bluegrass<br />901 Facebook Likes
+							</div>
+						</form>	
+						<div class="clear"></div>
+						</li>
+					</div>
+				</ul>
+			</div>
+			</div>
+			
+			</div>
+			
+			
+
+
+			<div class="clear">
+			</div>
+			
+				<div id="footer">
+					<div id="footerLinks">
+						<a href="#">User Agreement  </a> - <a href="#">About Us</a> - <a href="#">  Contact</a>
+					</div>
+				</div>	
+			</div>
+		</div>
+		
+
+	</body> 
+</html>
+
+<script type='text/javascript'>
+
+
+function removeSelected(){
+	 $('#tourDatesDH1').removeClass("selectedstate");
+	 $('#tourDatesDH2').removeClass("selectedstate");
+	 $('#tourDatesDH3').removeClass("selectedstate");
+	 $('#tourDatesDH4').removeClass("selectedstate");
+	 $('#tourDatesDH5').removeClass("selectedstate");
+	 $('#tourDatesDH1').addClass("normalstate");
+	 $('#tourDatesDH2').addClass("normalstate");
+	 $('#tourDatesDH3').addClass("normalstate");
+	 $('#tourDatesDH4').addClass("normalstate");
+	 $('#tourDatesDH5').addClass("normalstate");
+	 
+	 
+};
+
+function showSelected1(){
+	 $('#selectingContainer').removeClass("hideContainer");
+	 $('#selectingContainer2').addClass("hideContainer");
+	 $('#selectingContainer3').addClass("hideContainer");
+	 $('#selectingContainer4').addClass("hideContainer");
+	 $('#selectingContainer5').addClass("hideContainer");
+	 
+	 
+};
+
+function showSelected2(){
+	 $('#selectingContainer').addClass("hideContainer");
+	 $('#selectingContainer2').removeClass("hideContainer");
+	 $('#selectingContainer3').addClass("hideContainer");
+	 $('#selectingContainer4').addClass("hideContainer");
+	 $('#selectingContainer5').addClass("hideContainer");
+	 
+	 
+};
+
+function showSelected3(){
+	 $('#selectingContainer').addClass("hideContainer");
+	 $('#selectingContainer2').addClass("hideContainer");
+	 $('#selectingContainer3').removeClass("hideContainer");
+	 $('#selectingContainer4').addClass("hideContainer");
+	 $('#selectingContainer5').addClass("hideContainer");
+	 
+	 
+};
+
+function showSelected4(){
+	 $('#selectingContainer').addClass("hideContainer");
+	 $('#selectingContainer2').addClass("hideContainer");
+	 $('#selectingContainer3').addClass("hideContainer");
+	 $('#selectingContainer4').removeClass("hideContainer");
+	 $('#selectingContainer5').addClass("hideContainer");
+	 
+	 
+};
+
+function showSelected5(){
+	 $('#selectingContainer').addClass("hideContainer");
+	 $('#selectingContainer2').addClass("hideContainer");
+	 $('#selectingContainer3').addClass("hideContainer");
+	 $('#selectingContainer4').addClass("hideContainer");
+	 $('#selectingContainer5').removeClass("hideContainer");
+	 
+	 
+};
+    
+    
+
+
+$('#tourDatesDH1').addClass("selectedstate")
+$('#tourDatesDH1').removeClass("normalstate");
+
+
+$("#tourDatesDH1").click(
+               
+               function() {
+               
+						showSelected1();
+
+                       removeSelected();
+                       $('#tourDatesDH1').addClass("selectedstate")
+                       $('#tourDatesDH1').removeClass("normalstate");
+                       
+                       
+               });
+             
+$("#tourDatesDH2").click(
+               
+               function() {
+
+                       
+                       showSelected2();
+
+                   	  removeSelected();
+                   	  $('#tourDatesDH2').addClass("selectedstate")
+                      $('#tourDatesDH2').removeClass("normalstate");
+                      
+                      
+                      
+                    
+                   	    
+                       
+               });
+               
+$("#tourDatesDH3").click(
+               
+               function() {
+                       
+                       showSelected3();
+                        removeSelected();
+                   	  $('#tourDatesDH3').addClass("selectedstate")
+                      $('#tourDatesDH3').removeClass("normalstate");
+
+               });
+               
+$("#tourDatesDH4").click(
+               
+               function() {
+                       
+                       showSelected4();
+                        removeSelected();
+                   	  $('#tourDatesDH4').addClass("selectedstate")
+                      $('#tourDatesDH4').removeClass("normalstate");
+                      
+               });
+               
+$("#tourDatesDH5").click(
+               
+               function() {
+                       
+                       showSelected5();
+                       removeSelected();
+                   	  $('#tourDatesDH5').addClass("selectedstate")
+                      $('#tourDatesDH5').removeClass("normalstate");
+                       
+               });
+               
+      
+               
+</script>

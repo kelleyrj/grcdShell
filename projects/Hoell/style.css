@@ -1,0 +1,105 @@
+
+@font-face {
+    font-family: "Mensch";
+    src: url('Fonts/Mensch/mensch.ttf') format("truetype");
+}
+
+h1 {
+
+	font-family: "Mensch", Verdana, Tahoma;
+	color: white;
+}
+
+
+
+
+html, body { 
+
+	background: url('images/background.jpg') no-repeat center center fixed;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color: #000001;
+	margin: 0;
+	padding: 0;
+
+} 
+
+/* setup */
+
+
+.floatLeft {
+		float: left;
+	}
+	
+.floatRight {
+		float: right;
+	}
+	
+.clear {
+		clear: both;
+	}
+
+
+#container {
+
+	width: 1024px;
+	margin: 0 auto;
+}
+
+
+
+/* home page background and logo */
+
+#spacerTop {
+		width: 100%;
+		height: 170px;
+
+}
+
+#logoWrapper {
+
+	width: 100%;
+	margin: 0 auto;
+
+}
+
+
+
+/* home page getting started buttons */
+
+#landingButtons {
+	margin-top: 30px;
+	padding-left: 380px;
+	width: 794px;
+	height: 51px;
+}
+
+#registerBtn {
+
+
+}
+
+#planBtnContainer {
+	width: 249px;
+	height: 51px;
+	padding-left: 60px;
+}
+
+#planBtn {
+	width: 249px;
+	height: 51px;
+}
+
+
+
+
+/* top bar */
+
+#topBar {
+	width: 100%;
+	height: 52px;
+	background-image: url('images/topBar.jpg');
+}
+

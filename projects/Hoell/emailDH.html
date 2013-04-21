@@ -1,0 +1,103 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+	<head> 
+		<link rel="stylesheet" type="text/css" href="styleRegistration.css">
+
+		<meta charset="utf-8"> 
+
+		</script>
+
+		<style type="text/css" media="screen">
+		</style>
+<script type="text/javascript">
+			window.onload = function()
+                {
+                   document.getElementById('headerRight').innerHTML = "WELCOME, " + localStorage.bandName;
+                   
+                   emailText.value =  "Hi we're " + localStorage.bandName + " from " + localStorage.hometown +"." + " " + localStorage.brief;              
+                  
+                };
+		</script>
+	</head> 
+	<body>
+		<div id="topBar">
+			<div id="logoContainer">
+				<div id="miniLogo" class="floatLeft">
+					<a href="index.html"><img src="images/minilogo.png"></a>
+				</div>
+				<div id="headerRight" class="floatRight">WELCOME</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div id="wrapper">
+			
+			<div class="container">
+
+				<div id="stepContainer">
+					<div id="greyLine">
+					</div>
+					<div id="stepText">
+						Step 1 of 2
+					</div>
+					<div id="greyLine">
+					</div>
+				</div>
+
+				<div id="inputContainerEmailForm">
+	
+						<form action="email2.html">
+						
+							<div class="inputLabelText">
+								Edit this email to send to the following <strong>venues:</strong>
+							</div>
+							<form class="selectBoxEmail">
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike"><div class="venueContactLabelText floatLeft">Skullys</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike"><div class="venueContactLabelText floatLeft">Skullys</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike"><div class="venueContactLabelText floatLeft">Skullys</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike"><div class="venueContactLabelText floatLeft">Skullys</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike"><div class="venueContactLabelText floatLeft">Skullys</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike"><div class="venueContactLabelText floatLeft">Skullys</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike"><div class="venueContactLabelText floatLeft">Skullys</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike"><div class="venueContactLabelText floatLeft">Skullys</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike"><div class="venueContactLabelText floatLeft">Skullys</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike"><div class="venueContactLabelText floatLeft">Skullys</div>
+							</div>
+							
+							<div class="clear"></div>
+						    <textarea id="emailText" class="textAreaEmail" rows="40" cols="80">  </textarea><br>
+						  	<button class="nextBtn" type="submit" name="step1next" value="bar">
+						  		<img src="images/nextBtn.png">
+						  	</button>
+
+						</form>
+					
+				</div>
+				<div id="footer">
+					<div id="footerLinks">
+						<a href="#">User Agreement  </a> - <a href="#">About Us</a> - <a href="#">  Contact</a>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</body> 
+</html>

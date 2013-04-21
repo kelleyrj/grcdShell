@@ -1,0 +1,126 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+	<head> 
+
+		  <meta charset="utf-8" />
+		  <title>On Tour | Plan Trip</title>
+		  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+		  <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+		  
+		   <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbaFIKXS-UVEEcflT-LM9pcmp7xOvTxDI&sensor=true">
+    </script>
+		  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+		  <script type="text/javascript" src="js/registration.js"></script>		 
+				<script type="text/javascript">
+			window.onload = function()
+                {
+                   document.getElementById('headerRight').innerHTML = "WELCOME, " + localStorage.bandName;
+                };
+		</script>
+
+		  <script>
+		  $(function() {
+		    $( "#datepicker" ).datepicker();
+		  });
+		  $(function() {
+		    $( "#datepicker2" ).datepicker();
+		  });
+		  </script>
+		<link rel="stylesheet" type="text/css" href="styleRegistration.css">
+
+		<meta charset="utf-8"> 
+
+		</script>
+
+		<style type="text/css" media="screen">
+		</style>
+
+	</head> 
+	<body> 
+		<div id="topBar">
+			<div id="logoContainer">
+				<div id="miniLogo" class="floatLeft">
+					<a href="index.html"><img src="images/minilogo.png"></a>
+				</div>
+				<div id="headerRight" class="floatRight">WELCOME</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div id="wrapper">	
+
+
+			<div class="container">
+			<div id="map_canvas">
+			</div>
+				<div id="stepContainerPlan">
+					<div id="greyLine">
+					</div>
+					<div id="stepText">
+						plan your tour
+					</div>
+					<div id="greyLine">
+					</div>
+				</div>
+
+				<div id="inputContainerPlanRoute">
+					<div id="inputContainerLocation" class="floatLeft">
+						<form action="plan.html">
+							<div class="inputLabelText">
+								<label for="name"> Start Location </label>
+							</div>
+						  <input id="startLoc" class="location" type="text" name="name"value="City, State"  onfocus="if(this.value=='City, State') {this.value='', this.style.color='#000'};" onblur="if(this.value=='') {this.value='City, State', this.style.color='#ccc';}"><br>
+					</div>
+					<div id="arrow" class="floatLeft">
+						<img src="images/arrow.png">
+					</div>
+					<div id="inputContainerLocation" class="floatLeft">
+						<form action="plan.html">
+							<div class="inputLabelText">
+								<label for="name"> End Location </label>
+							</div>
+						  <input id="endLoc" type="text" class="location" name="name"value="City, State"  onfocus="if(this.value=='City, State') {this.value='', this.style.color='#000'};" onblur="if(this.value=='') {this.value='City, State', this.style.color='#ccc';}"><br>
+					</div>
+					<div class="clear">
+					</div>
+					<div id="inputContainerLeaveDate" class="floatLeft">
+						<form action="plan.html">
+							<div class="inputLabelText">
+								<label for="name"> When are you going? </label>
+							</div>
+						  <input class="leaveDate" id="datepicker"type="text" name="name"onfocus="if(this.value=='') {this.value='', this.style.color='#000'};" onblur="if(this.value=='') {this.value='', this.style.color='#ccc';}"><br>
+					</div>
+					<div id="arrow2" class="floatLeft">
+						<img src="images/arrow.png">
+					</div>
+
+					<div id="inputContainerReturnDate" class="floatLeft">
+						<form action="plan.html">
+							<div class="inputLabelText">
+								<label for="name"> when are you coming back? </label>
+							</div>
+						  <input class="returnDate" id="datepicker2" type="text" name="name"onfocus="if(this.value=='') {this.value='', this.style.color='#000'};" onblur="if(this.value=='') {this.value='', this.style.color='#ccc';}"><br>
+					</div>
+					<div id="inputContainerLeft">
+						<div class="previousBtnContact">
+							<a href="select.html"><img src="images/generateRoute.png"></a>
+						</div>
+					</div>
+					<div class="clear">
+					</div>
+					
+
+				</div>
+				<div id="footer">
+					<div id="footerLinks">
+						<a href="#">User Agreement  </a> - <a href="#">About Us</a> - <a href="#">  Contact</a>
+					</div>
+				</div>	
+			</div>
+		</div>
+		
+
+	</body> 
+</html>

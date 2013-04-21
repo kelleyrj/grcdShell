@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+	<head> 
+		<link rel="stylesheet" type="text/css" href="styleTest.css">
+
+		<meta charset="utf-8"> 
+
+		</script>
+		<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+
+		<style type="text/css" media="screen">
+		</style>
+
+	</head> 
+	<body> 
+<!-- tabs -->
+<div class="css-tabs">
+  <div><a href="ajax1.htm">Tab 1</a></div>
+  <div><a href="ajax2.htm">Second tab</a></div>
+  <div><a href="ajax3.htm">An ultra long third tab</a></div>
+</ul>
+ 
+<!-- single pane -->
+<div class="css-panes">
+  <div style="display:block"></div>
+</div>
+		
+
+	</body> 
+</html>
+
+<script type="text/javascript">
+$("ul.css-tabs").tabs(
+      "div.css-panes > div",
+      {effect: 'ajax', history: true}
+    );
+  
+</script>

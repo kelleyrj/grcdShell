@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+	<head> 
+		<link rel="stylesheet" type="text/css" href="styleRegistration.css">
+
+		<meta charset="utf-8"> 
+
+
+		<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+
+
+		<script type="text/javascript">
+			window.onload = function()
+                {
+                   document.getElementById('headerRight').innerHTML = "WELCOME, " + localStorage.bandName;
+                };
+
+                function OnNext4() {
+
+				var bandE = document.myFormLast.bandemail.value;
+				localStorage.bandemail = bandE;
+
+				var bandP = document.myFormLast.bandnumber.value;
+				localStorage.bandnumber = bandP;
+
+				var contactN = document.myFormLast.contactname.value;
+				localStorage.contactname = contactN;
+
+				var bandW = document.myFormLast.bandwebsite.value;
+				localStorage.bandwebsite = bandW;
+
+			}
+		</script>
+
+		<style type="text/css" media="screen">
+		</style>
+
+	</head> 
+	<body> 
+		<div id="topBar">
+			<div id="logoContainer">
+				<div id="miniLogo" class="floatLeft">
+					<a href="index.html"><img src="images/minilogo.png"></a>
+				</div>
+				<div id="headerRight" class="floatRight">WELCOME</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div id="wrapper">	
+			<div class="container">
+				<div id="stepContainer">
+					<div id="greyLine">
+					</div>
+					<div id="stepText">
+						Step 4 of 4
+					</div>
+					<div id="greyLine">
+					</div>
+				</div>
+
+				<div id="inputContainer">
+					<div id="inputContainerLeft" class="floatLeft">
+						<form name="myFormLast" action="plan.html">
+							<div class="inputLabelText">
+								<label for="name"> Band Email </label>
+							</div>
+						  <input type="text" name="bandemail" onfocus="if(this.value=='') {this.value='', this.style.color='#000'};" onblur="if(this.value=='') {this.value='', this.style.color='#ccc';}"><br>
+						  <div class="inputLabelText">
+								<label for="hometown"> Band Phone Number (optional) </label>
+							</div>
+						  <input type="text" name="bandnumber" value="XXX XXX XXXX"  onfocus="if(this.value=='XXX XXX XXXX') {this.value='', this.style.color='#000'};" onblur="if(this.value=='') {this.value='XXX XXX XXXX', this.style.color='#ccc';}"><br>
+						  <div class="previousBtnContact">
+							<a href="register3.html"><img src="images/previousBtn.png"></a>
+						  </div>
+						  
+						
+					</div>
+					<div id="inputContainerLeft" class="floatLeft">
+						
+							<div class="inputLabelText">
+								Contact Name
+							</div>
+						  <input class ="input" type="text" name="contactname" onfocus="if(this.value=='') {this.value='', this.style.color='#000'};" onblur="if(this.value=='') {this.value='', this.style.color='#ccc';}"><br>
+						  <div class="inputLabelText">
+								Band Website
+							</div>
+						  <input class ="input" type="text" name="bandwebsite" onfocus="if(this.value=='') {this.value='', this.style.color='#000'};" onblur="if(this.value=='') {this.value='', this.style.color='#ccc';}"><br>
+						  	<button class="nextBtn" type="submit" onclick="OnNext4()" name="step4next" value="bar">
+						  		<img src="images/startPlanningBtn.png">
+						  	</button>
+
+						</form>
+					</div>
+				</div>
+				<div id="footer" class="footerAdjust">
+					<div id="footerLinks">
+						<a href="#">User Agreement  </a> - <a href="#">About Us</a> - <a href="#">  Contact</a>
+					</div>
+				</div>	
+			</div>
+		</div>
+		
+
+	</body> 
+</html>

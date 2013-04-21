@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+
+	<head> 
+		<link rel="stylesheet" type="text/css" href="styleRegistration.css">
+
+		<meta charset="utf-8"> 
+
+		</script>
+
+		<style type="text/css" media="screen">
+		</style>
+		<script type="text/javascript">
+			window.onload = function()
+                {
+                   document.getElementById('headerRight').innerHTML = "WELCOME, " + localStorage.bandName;
+                   
+                   document.getElementById('emailText').innerHTML =  "Hello! My name is " + localStorage.contactname + " and I play in the band " + localStorage.bandName + " from " + localStorage.hometown +"." + " We will be coming to <span>(venue city)</span> on <span>(specified date)</span> and would love to play at <span>(venue name)</span>." + "<br /> <br />" + " <strong>A little bit about us:</strong><br /> " + localStorage.banddescription + "<br /><br />You can check out our various pages below:<br /><br /><span1>Facebook</span1><br /><span1>Twitter</span1><br /><span1>YouTube</span1><br /><span1>Myspace</span1><br /><span1>ReverbNation</span1><br /><span1>Our Website</span1><br /><br /> We would love to plan something for that day, so if you are available for booking, please let me know!<br /> You can either send me an email at " + localStorage.bandemail + " or call " + localStorage.contactname + " at " + localStorage.bandnumber + "<br /><br />Thanks!"; 
+
+                  
+                };
+		</script>
+	</head> 
+	<body>
+		<div id="topBar">
+			<div id="logoContainer">
+				<div id="miniLogo" class="floatLeft">
+					<a href="index.html"><img src="images/minilogo.png"></a>
+				</div>
+				<div id="headerRight" class="floatRight">WELCOME</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div id="wrapper">
+			
+			<div class="container">
+
+				<div id="stepContainer">
+					<div id="greyLine">
+					</div>
+					<div id="stepText">
+						Step 1 of 2
+					</div>
+					<div id="greyLine">
+					</div>
+				</div>
+
+				<div id="inputContainerEmailForm">
+	
+						<form action="email2.html">
+						
+							<div class="inputLabelText">
+								Edit this email to send to the following <strong>venues:</strong>
+							</div>
+							<form class="selectBoxEmail">
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike" checked><div class="venueContactLabelText floatLeft">Skullys</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike" checked><div class="venueContactLabelText floatLeft">Motr</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike" checked><div class="venueContactLabelText floatLeft">Northside Tavern</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike" checked><div class="venueContactLabelText floatLeft">The Basement</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike" checked><div class="venueContactLabelText floatLeft">Noe Theatre</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike" checked><div class="venueContactLabelText floatLeft">Black Cats</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike" checked><div class="venueContactLabelText floatLeft">Iron Lung</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike" checked><div class="venueContactLabelText floatLeft">Open Bar</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike" checked><div class="venueContactLabelText floatLeft">The Comet</div>
+							</div>
+							<div class="emailSelectContainer floatLeft">
+							<input class="emailButton floatLeft" type="checkbox" name="vehicle" value="Bike" checked><div class="venueContactLabelText floatLeft">Heights Bar</div>
+							</div>
+							
+							<div class="clear"></div>
+						    <div id="emailText" contenteditable="true"></div><br>
+						  	<button class="nextBtn" type="submit" name="step1next" value="bar">
+						  		<img src="images/nextBtn.png">
+						  	</button>
+
+						</form>
+					
+				</div>
+				<div id="footer" class="footerAdjust">
+					<div id="footerLinks">
+						<a href="#">User Agreement  </a> - <a href="#">About Us</a> - <a href="#">  Contact</a>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</body> 
+</html>

@@ -1,0 +1,1686 @@
+
+@font-face {
+    font-family: "Mensch";
+    src: url('Fonts/Mensch/mensch.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Mensch Inline";
+    src: url('Fonts/Mensch/mensch-inline.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Helvetica Neue Lt Std";
+    src: url('Fonts/HelveticaCY.dfont') format("truetype");
+}
+
+h1 {
+
+	font-family: "Mensch", Verdana, Tahoma;
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* setup */
+
+
+.floatLeft {
+		float: left;
+	}
+	
+.floatRight {
+		float: right;
+	}
+	
+.clear {
+		clear: both;
+	}
+
+#wrapper {
+	height: 100%;
+	width: 1024px;
+	margin: 0 auto;
+	box-shadow: 0 0 7px #000;
+	position: relative;
+	background-color: #f5f5f5;
+}
+
+.container {
+	position: relative;
+	background-color: #f5f5f5;
+	width: 1024px;
+	height: auto !important;
+	height: 100%;
+	padding-top: 30px;
+	margin-bottom: 30px;
+
+}
+
+html, body { 
+
+	background: url('images/background.jpg') no-repeat center center fixed;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color: #000001;
+	margin: 0;
+	padding: 0; 
+
+} 
+
+#fullContainer {
+	width:100%;
+	height:100%;
+	background-color: black;
+	-moz-transition:opacity 0.5s linear;
+	-webkit-transition:opacity 0.5s linear;
+	-o-transition:opacity 0.5s linear;
+	transition:opacity 0.5s linear;
+	opacity:.5;
+}
+
+
+
+/* ToolTip  */
+
+    a.tooltip {outline:none;text-decoration:none;}
+    a.tooltip strong {line-height:30px;}
+    a.tooltip > span 
+    {
+	    width:225px;
+	    padding: 10px 20px;
+	    opacity: 0;
+	    visibility: hidden;
+	    z-index: 10;	   
+	    position: absolute;
+
+	    font-family: "Helvetica Neue Lt Std", Verdana, Tahoma;
+	    line-height: 18px;
+	    font-size: 12px;
+	    font-style: normal;  
+	    font-weight: 300;
+        	    
+	    -webkit-border-radius: 3px;
+	    -moz-border-radius: 3px;
+	    -o-border-radius: 3px;
+	    border-radius: 3px;
+	    
+	    
+        -webkit-box-shadow: 2px 2px 2px #999;
+	    -moz-box-shadow: 2px 2px 2px #999;		
+	    box-shadow: 2px 2px 2px #999;	    
+	    
+	    -webkit-transition-property:opacity, 20px, visibility, 20px;
+	    -webkit-transition-duration:0.2s, 0.1s, 0.2s, 0.1s;  
+	    -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+	
+	    -moz-transition-property:opacity, 20px, visibility, 20px;
+	    -moz-transition-duration:0.2s, 0.1s, 0.2s, 0.1s;  
+	    -moz-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+	
+	    -o-transition-property:opacity, 20px, visibility, 20px;
+	    -o-transition-duration:0.2s, 0.1s, 0.2s, 0.1s;  
+	    -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+	
+	    transition-property:opacity, 20px, visibility, 20px;
+	    transition-duration:0.2s, 0.1s, 0.2s, 0.1s;  
+	    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+	    
+
+    }
+    
+    /*a.tooltip > span:hover,*/
+	a.tooltip:hover > span
+	{
+		opacity: 1;
+		text-decoration:none;
+		visibility: visible;
+		overflow: visible;
+		margin-top: -10px;
+		display: inline;
+		margin-left: 0px;	
+		width: 225px;	
+	}
+
+		@-moz-document url-prefix() {
+	    a.tooltip > span 
+    {
+	    width:225px;
+	    padding: 10px 20px;
+	    opacity: 0;
+	    visibility: hidden;
+	    z-index: 10;	   
+	    position: absolute;
+	    margin-top: 93px;
+	    margin-left: -74px;	
+
+	    font-family: "Helvetica Neue Lt Std", Verdana, Tahoma;
+	    line-height: 18px;
+	    font-size: 12px;
+	    font-style: normal;  
+	    font-weight: 300;
+        	    
+	    -webkit-border-radius: 3px;
+	    -moz-border-radius: 3px;
+	    -o-border-radius: 3px;
+	    border-radius: 3px;
+	    
+	    
+        -webkit-box-shadow: 2px 2px 2px #999;
+	    -moz-box-shadow: 2px 2px 2px #999;		
+	    box-shadow: 2px 2px 2px #999;	    
+	    
+	    -webkit-transition-property:opacity, 20px, visibility, 20px;
+	    -webkit-transition-duration:0.2s, 0.1s, 0.2s, 0.1s;  
+	    -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+	
+	    -moz-transition-property:opacity, 20px, visibility, 20px;
+	    -moz-transition-duration:0.2s, 0.1s, 0.2s, 0.1s;  
+	    -moz-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+	
+	    -o-transition-property:opacity, 20px, visibility, 20px;
+	    -o-transition-duration:0.2s, 0.1s, 0.2s, 0.1s;  
+	    -o-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+	
+	    transition-property:opacity, 20px, visibility, 20px;
+	    transition-duration:0.2s, 0.1s, 0.2s, 0.1s;  
+	    transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+	    
+
+    }
+}
+	
+	@-moz-document url-prefix() {
+    a.tooltip:hover > span {
+        opacity: 1;
+		text-decoration:none;
+		visibility: visible;
+		overflow: visible;
+		margin-top: 73px;
+		display: inline;
+		margin-left: -74px;	
+		
+		width: 225px;	
+    }
+}
+
+	a.tooltip span b {
+    
+		width: 15px;
+		height: 15px;
+		margin-left: 20px;
+		margin-top: -19px;
+			
+		display: block;
+		position: absolute;
+
+		-webkit-transform: rotate(-45deg);
+		-moz-transform: rotate(-45deg);
+		-o-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+			
+		-webkit-box-shadow: inset -1px 1px 0 #fff;
+		-moz-box-shadow: inset 0 1px 0 #fff;
+		-o-box-shadow: inset 0 1px 0 #fff;
+		box-shadow: inset 0 1px 0 #fff;
+			
+		display: none\0/;
+		*display: none;
+	}
+    
+a.tooltip > span {
+	color: #4c4c4c; 
+
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ffffff));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+	    
+	border: 2px solid #4c4c4c;	     
+}    
+	  
+a.tooltip span b {
+	background: #ffffff;
+	border-top: 2px solid #4c4c4c;
+	border-right: 2px solid #4c4c4c;
+}    
+
+
+    
+a.tooltipBands > span {
+	color: #4c4c4c; 
+
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#ffffff));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
+	    
+	border: 2px solid #4c4c4c;	     
+}    
+	  
+a.tooltipBands span b {
+	background: #ffffff;
+	border-top: 2px solid #4c4c4c;
+	border-right: 2px solid #4c4c4c;
+}   
+
+
+
+
+
+
+/* home page background and logo */
+
+#spacerTop {
+		width: 100%;
+		height: 170px;
+
+}
+
+#logoWrapper {
+
+	width: 100%;
+	margin: 0 auto;
+
+}
+
+
+
+
+
+
+
+
+/* home page getting started buttons */
+
+#landingButtons {
+	margin-top: 50px;
+	padding-left: 230px;
+	width: 1024px;
+	height: 51px;
+}
+
+#registerBtn {
+
+
+}
+
+#planBtnContainer {
+	width: 249px;
+	height: 51px;
+	padding-left: 60px;
+}
+
+#planBtn {
+	width: 249px;
+	height: 51px;
+}
+
+
+
+
+
+
+
+/* top bar */
+
+#topBar {
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	height: 52px;
+	background-image: url('images/topBar.jpg');
+	margin: 0 auto;
+	box-shadow: 0 0 7px #000;
+}
+
+#miniLogo {
+	padding-top: 13px;
+	margin-left: 15px;
+	width: 146px;
+	height: auto;
+}
+
+#logoContainer {
+	width: 1024px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+
+/* footer */
+
+#footer {
+	width: 1024px;
+	background-color: #e7e7e7;
+	bottom:0;
+    height:50px;
+}
+
+.footerAdjust {
+	width: auto;
+	height: auto;
+	margin-bottom: -30px;
+
+}
+
+#footerLinks {
+	padding-top: 18px;
+	text-align: center;
+	font-family: "Mensch", Verdana, Tahoma;
+	color: #474747;;
+	font-size: 14pt;
+	font-weight: 100;
+}
+
+#footerLinks a{
+	text-decoration: none;
+	text-align: center;
+	font-family: "Mensch", Verdana, Tahoma;
+	color: #474747;;
+	font-size: 14pt;
+	font-weight: 100;
+}
+
+#footerLinks a:visited{
+	text-decoration: none;
+	text-align: center;
+	font-family: "Mensch", Verdana, Tahoma;
+	color: #474747;;
+	font-size: 14pt;
+	font-weight: 100;
+}
+
+#footerLinks a:hover{
+	text-shadow: 0px 0px 2px #ccc;
+	text-decoration: none;
+	text-align: center;
+	font-family: "Mensch", Verdana, Tahoma;
+	color: #000;
+	font-size: 14pt;
+	font-weight: 100;
+}
+
+
+
+
+
+
+
+/* registration step */
+
+#stepContainer {
+	width: 200px;
+	height: 100%;
+	margin: 0 auto;
+	padding-top: 60px;
+
+}
+
+#stepContainerPlan {
+	width: 200px;
+	height: 100%;
+	margin: 0 auto;
+	padding-top: 30px;
+
+}
+
+#greyLine {
+	width: 200px;
+	height: 1px;
+	background-color: #dddada;
+
+}
+
+#stepText {
+	padding-top: 6px;
+	text-align: center;
+	font-size: 21pt;
+	color: #474747;
+	font-family: "Mensch", Verdana, Tahoma;
+	font-weight: 100;
+	height: 35px;
+}
+
+
+
+/*  map   */
+
+#map_canvas {
+	margin-top: 20px;
+	width: 1024px;
+	height: 300px;
+	-moz-box-shadow:    0 0 7px #adadad;
+   -webkit-box-shadow:  0 0 7px #adadad;
+   box-shadow:          0 0 7px #adadad;
+
+
+}
+
+
+
+#shadow {
+	height: 100%;
+	width: 1024px;
+	background-image: url('images/shadow.png');
+
+}
+
+#stepContainerMap {
+	width: 200px;
+	height: 100%;
+	margin: 0 auto;
+	padding-top: 20px;
+
+
+}
+
+/*   Email Venues   */
+
+
+#venueSelectContainer {
+	margin-left: 80px;
+	width: 600px;
+	height: 100%;
+
+}
+
+.selectBoxEmail {
+	width: 600px;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+
+}
+
+
+
+.venueContactLabelText {
+	font-family: "Helvetica Neue Lt Std", Verdana, Tahoma;
+	font-weight: 200;
+	color: #4c4c4c;
+	width: 120px;
+	height: 30px;
+	padding-top: 12px;
+}
+
+
+@-moz-document url-prefix() {
+.venueContactLabelText {
+	font-family: "Helvetica Neue Lt Std", Verdana, Tahoma;
+	font-weight: 200;
+	color: #4c4c4c;
+	width: 120px;
+	height: 30px;
+	padding-top: 10px;
+	line-height: 16px;
+}}
+
+
+@-moz-document url-prefix() {
+.emailSelectContainer {
+	width: auto;
+	height: auto;
+	margin-top: 20px;
+}}
+
+
+
+
+
+
+/*  boxes */
+#routeInputs {
+	width: 410px;
+	height: 100%;
+
+}
+
+#planInput {
+	width: 410px;
+	height: 100%;
+
+}
+
+#inputContainer {
+	width: 1024px;
+	height: 300px;
+	margin-top: 50px;
+	padding-bottom: 30px;
+
+}
+
+#inputContainerEmail {
+	width: 740px;
+	height: 100%;
+	margin-top: 50px;
+	padding-bottom: 30px;
+
+}
+
+#inputContainerPlanRoute {
+	width: 1024px;
+	height: 360px;
+	margin-top: 50px;
+	padding-bottom: 30px;
+
+}
+
+#networkInputContainer {
+	width: 1024px;
+	height: 100%;
+	padding-bottom: 112px;
+
+}
+
+#inputContainerNetworks {
+	width: 1024px;
+	height: auto;
+	margin-top: 50px;
+	margin-left: 70px;
+
+}
+
+#inputContainerLeft {
+	width: 410px;
+	height: auto;
+	margin-left: 70px;
+
+
+}
+
+#inputContainerEmailForm {
+	margin-top: 50px;
+	width: 860px;
+	height: 700px;
+	margin-left: 70px;
+
+
+}
+
+#inputContainerLocation {
+	width: 380px;
+	height: auto;
+	margin-left: 70px;
+
+
+}
+
+#inputContainerLeaveDate {
+	width: 280px;
+	height: auto;
+	margin-left: 70px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+
+
+}
+
+#inputContainerReturnDate {
+	width: 400px;
+	height: auto;
+	margin-left: 70px;
+	margin-top: 20px;
+
+
+}
+
+#inputContainerPlan {
+	width: 100%;
+	height: 100%;
+	margin-left: 70px;
+
+
+}
+
+#inputContainerLeft2 {
+	width: 410px;
+	height: auto;
+	margin-left: 70px;
+
+
+}
+
+.inputLabelText {
+	width: 100%;
+	height: auto;
+	font-family: "Mensch", Verdana, Tahoma;
+	font-weight: 400;
+	font-size: 21pt;
+	color: #474747;
+	margin-bottom: 20px;
+}
+
+.inputLabelText strong {
+	font-family: "Mensch", Verdana, Tahoma;
+	color: #b979b4;
+	font-weight: 400;
+	font-size: 21pt;
+}
+
+textArea {
+	padding: 20px;
+	font-family: "Helvetica Neue Lt Std", Verdana, Tahoma;
+	font-weight: 100;
+	font-size: 18pt;
+	background-color:white;
+	border: 0px solid;
+	height:139px;
+	width:370px;
+	color:#000;
+	margin-bottom: 30px;
+	resize: none;
+}
+
+textArea:focus {
+	color:#000;
+    outline:none;
+    border-color:#947093;
+    box-shadow: 0 0 10px #947093;
+}
+
+.textAreaEmail {
+	padding: 20px;
+	font-family: "Mensch", Verdana, Tahoma;
+	font-weight: 100;
+	font-size: 18pt;
+	background-color:white;
+	border: 2px solid #4c4c4c;
+	height:400px;
+	width:840px;
+	color:#000;
+	resize: none;
+	margin-top: 30px;
+}
+
+.textAreaEmail:focus {
+	color:#000;
+    outline:none;
+    border-color:#947093;
+    box-shadow: 0 0 10px #947093;
+}
+
+input {
+	padding-left: 20px;
+	font-family: "Helvetica Neue Lt Std", Verdana, Tahoma;
+	font-weight: 100;
+	font-size: 18pt;
+	background-color:white;
+	border: 0px solid;
+	height:50px;
+	width:390px;
+	margin-bottom: 30px;
+	color: #ccc;
+	padding-top: 7px;
+}
+
+input.emailButton {
+	width: 20px;
+	height: 30px;
+	margin-bottom: -30px;
+}
+
+input:focus { 
+	color:#000;
+    outline:none;
+    border-color:#947093;
+    box-shadow: 0 0 10px #947093;
+}
+
+
+.input2 {
+background-color:white;
+border: 0px solid;
+height:179px;
+width:390px;
+color:#000;
+margin-bottom: 30px;
+}
+
+.location {
+background-color:white;
+border: 0px solid;
+height: 50px;
+width:300px;
+color:#ccc;
+margin-bottom: 30px;
+}
+
+
+.leaveDate {
+background-color:white;
+border: 0px solid;
+height: 50px;
+width:200px;
+color:#000;
+margin-bottom: 30px;
+}
+
+.returnDate {
+background-color:white;
+border: 0px solid;
+height: 50px;
+width:200px;
+color:#000;
+margin-bottom: 30px;
+}
+
+
+.nextBtn {
+      padding:0;
+      margin:0;
+      border:none;
+      background:none;
+      cursor:pointer;
+      float: right;
+    }  
+
+.nextBtnPlan {
+      padding:0;
+      margin:0;
+      border:none;
+      background:none;
+      background-color: none;
+      cursor:pointer;
+    }    
+
+#genreInstructions {
+	font-family: "Helvetica";
+	font-size: 11pt;
+	font-style: italic;
+	font-weight: 100;
+	color: #c6c6c6;
+	margin-top: -25px;
+	margin-bottom: 20px;
+
+}
+
+.previousBtn {
+	height: 46px;
+	width: 100%;
+	margin-top: 5px;
+
+}
+
+.previousBtnNetworks {
+	height: 46px;
+	width: 100%;
+	margin-top: 30px;
+
+
+}
+
+.previousBtnContact {
+	height: 46px;
+	width: 100%;
+
+}
+
+#nextBtnNetworks {
+	height: 46px;
+	width: 100%;
+	margin-top: 30px;
+
+}
+
+
+#arrow {
+	height:24px;
+	width:38px;
+	padding-top: 60px;
+
+}
+
+#arrow2 {
+	height:24px;
+	width:38px;
+	padding-top: 85px;
+
+}
+
+
+
+
+
+/* Social Media Icons  */
+
+
+#iconContainer {
+	width: 720px;
+	height: auto;
+	margin: 0 auto;
+	position: center;
+
+}
+
+#networkIcon1 {
+	padding-right: 15px;
+	width: 93px;
+	height: 92px;
+
+}
+
+#networkIcon2 {
+	padding-right: 15px;
+	padding-left: 15px;
+	width: 93px;
+	height: 92px;
+
+}
+
+#networkIcon3 {
+	padding-right: 15px;
+	padding-left: 15px;
+	width: 93px;
+	height: 92px;
+
+}
+
+#networkIcon4 {
+	padding-right: 15px;
+	padding-left: 15px;
+	width: 93px;
+	height: 92px;
+
+}
+
+#networkIcon5 {
+	padding-right: 15px;
+	padding-left: 15px;
+	width: 93px;
+	height: 92px;
+
+}
+
+#networkIcon6 {
+	padding-right: 15px;
+	padding-left: 15px;
+	width: 93px;
+	height: 92px;
+
+}
+
+
+
+
+
+
+
+
+/*  Select Page   */
+
+.datesContainerDH1 {
+	height: 100%;
+	width: 315px;
+	margin-bottom: 15px;
+}
+
+#leftColumn {
+	height: 100%;
+	width: 315px;
+	margin-bottom: 15px;
+	margin-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* lists Dates */
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	
+}
+
+ul a{
+	margin: 0px;
+	text-decoration: none;
+	color: #000;
+	height: 50px;
+}
+
+
+li {
+	font-family: "Mensch", Verdana, Tahoma;
+	font-size: 16pt;
+	font-weight: 100;
+	color: #474747;
+}
+
+
+#tourDates {
+	padding: 18px 0px 0px 20px;
+	height: 62px;
+	width: 324px;
+	border-bottom: 2px solid #ccc;
+	color: #474747;
+
+}
+
+
+/*  arrow divs   */
+
+
+.normalstate{
+	background-image: url('images/TourDate_bkgrnd.png');
+	background-repeat: none;
+
+}
+
+.selectedstate{
+	background-image: url('images/tourDatesBackgroundArronw.png');
+	background-repeat: none;
+}
+
+
+
+
+
+#tourDatesDH1 {
+	padding: 18px 0px 0px 20px;
+	height: 64px;
+	width: 304px;
+	color: #474747;
+	font-family: "Mensch", Verdana, Tahoma;
+	font-size: 16pt;
+	font-weight: 100;
+	color: #474747;
+	cursor: hand; cursor: pointer;
+}
+
+#tourDatesDH1:hover {
+	background-image: url('images/tourDatesBackgroundArronw.png');
+	background-repeat: none;	
+
+}
+
+#tourDatesDH2 {
+	padding: 18px 0px 0px 20px;
+	height: 64px;
+	width: 304px;
+	color: #474747;
+	font-family: "Mensch", Verdana, Tahoma;
+	font-size: 16pt;
+	font-weight: 100;
+	color: #474747;
+	cursor: hand; cursor: pointer;
+}
+
+#tourDatesDH2:hover {
+	background-image: url('images/tourDatesBackgroundArronw.png');
+	background-repeat: none;	
+
+}
+
+#tourDatesDH3 {
+	padding: 18px 0px 0px 20px;
+	height: 64px;
+	width: 304px;	
+	color: #474747;
+	font-family: "Mensch", Verdana, Tahoma;
+	font-size: 16pt;
+	font-weight: 100;
+	color: #474747;
+	cursor: hand; cursor: pointer;
+}
+
+#tourDatesDH3:hover {
+	
+	background-image: url('images/tourDatesBackgroundArronw.png');
+	background-repeat: none;
+	
+}
+
+#tourDatesDH4 {
+	padding: 18px 0px 0px 20px;
+	height: 64px;
+	width: 304px;
+	color: #474747;
+	font-family: "Mensch", Verdana, Tahoma;
+	font-size: 16pt;
+	font-weight: 100;
+	color: #474747;
+	cursor: hand; cursor: pointer;
+}
+
+#tourDatesDH4:hover {
+	
+	background-image: url('images/tourDatesBackgroundArronw.png');
+	background-repeat: none;
+	
+}
+
+#tourDatesDH5 {
+	padding: 18px 0px 0px 20px;
+	height: 64px;
+	width: 304px;
+	color: #474747;
+	font-family: "Mensch", Verdana, Tahoma;
+	font-size: 16pt;
+	font-weight: 100;
+	color: #474747;
+	cursor: hand; cursor: pointer;
+}
+
+#tourDatesDH5:hover {
+	
+	background-image: url('images/tourDatesBackgroundArronw.png');
+	background-repeat: none;
+	
+}
+
+
+#tourDatesFirst {
+	margin-top: -20px;
+	padding: 18px 0px 0px 20px;
+	height: 62px;
+	width: 255px;
+	border-bottom: 2px solid #ccc;
+
+}
+
+
+#numbers {
+	width: 46px;
+	height: 46px;
+	padding-right: 0px;
+	margin-left: 20px;
+	font-family: "Mensch", Verdana, Tahoma;
+	color: white;
+	font-size: 26pt;
+	margin-top: 8px;
+	font-weight: 400;
+
+}
+
+#startContactingBtn {
+	width:248px;
+	height: 65px;
+	margin-left: 15px;
+	margin-top: 15px;
+}
+
+.dateText {
+	font-size: 13pt;
+	margin-top: 6px;
+	width: 180px;
+	height: 50px;
+}
+
+.selectingContainer {
+	width: 670px;
+	height: auto;
+}
+
+.selectingContainer2 {
+	width: 670px;
+	height: auto;
+}
+
+.selectingContainer3 {
+	width: 670px;
+	height: auto;
+}
+
+.selectingContainer4 {
+	width: 670px;
+	height: auto;
+}
+.selectingContainer5 {
+	width: 670px;
+	height: auto;
+}
+
+.hideContainer {
+	display: none;
+}
+
+
+
+
+#emailText {
+	padding: 20px;
+	font-weight: 100;
+	font-size: 14pt;
+	background-color:white;
+	border: 2px solid #4c4c4c;
+	height:400px;
+	width:840px;
+	color:#000;
+	resize: none;
+	margin-top: 30px;
+	font-family: "Helvetica Neue Lt Std", Verdana, Tahoma;
+	overflow-y: scroll;
+	letter-spacing: 1px;
+
+}
+
+
+@-moz-document url-prefix() {
+	#emailText {
+	padding: 20px;
+	font-weight: 50;
+	font-size: 12pt;
+	background-color:white;
+	border: 2px solid #4c4c4c;
+	height:400px;
+	width:840px;
+	color:#5a5a5a;
+	resize: none;
+	margin-top: 30px;
+	font-family: arial, Verdana, Tahoma;
+	overflow-y: scroll;
+
+
+	}
+}
+
+@-moz-document url-prefix() {
+	#emailText span1{
+	font-size: 12pt;
+	font-family: arial, Verdana, Tahoma;
+	color: #b979b4;
+	line-height:8px;
+	font-weight: 100;
+	margin: 0;
+	padding: 0;
+
+	}
+}
+
+@-moz-document url-prefix() {
+	#emailText strong{
+	font-size: 12pt;
+
+		}
+	}
+
+#emailText strong{
+	font-size: 14pt;
+	font-family: "Helvetica Neue Lt Std", Verdana, Tahoma;
+}
+
+#emailText span1{
+	font-size: 12pt;
+	font-family: "Helvetica Neue Lt Std", Verdana, Tahoma;
+	color: #b979b4;
+	line-height:8px;
+	font-weight: 200;
+	margin: 0;
+	padding: 0;
+	
+}
+
+#emailText span {
+	color: #ccc;
+}
+
+
+
+/* lists Venues  */
+
+#venueListContainer {
+
+	width: 290px;
+	height: 100%;
+}
+
+ul #venueList {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	
+	
+}
+
+.venueItem li {
+	font-family: "Helvetica Neue Lt Std", Verdana, Tahoma;
+	font-size: 12pt;
+	font-weight: 50;
+	height: 92px;
+	border-bottom: 1px solid #ccc;
+	width: 290px;
+	padding-top: 15px;
+}
+
+.venueItem:hover {
+	background-color: #f1f1f1;
+	box-shadow: 0 0 2px #ccc;
+	border: none;
+}
+
+.venueThumbnail {
+	width: 74px;
+	height: 74px;
+	
+}
+
+.venuePreviewText {
+	padding-left: 20px;
+	width: 130px;
+	height: 74px;
+	padding-top: 10px;
+	color: #474747;
+	color: #000;
+	font-weight: 200;
+	font-size: 10pt;
+	line-height:15px;
+	
+}
+
+strong {
+	font-size: 16pt;
+	font-weight: 300;
+}
+
+.star {
+	margin-top: -2px;
+	width: 100%;
+	height: 21px;
+}
+
+.selectBox {
+	width: 290px;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+
+}
+
+.selectButton {
+	width: 20px;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	margin-left: 10px;
+	margin-top:-10px;
+	cursor: pointer;
+	margin-right: 20px;
+	
+}
+
+#venueTitle {
+	font-family: "Mensch", Verdana, Tahoma;
+	font-size: 18pt;
+	font-weight: 400;
+	height: 40px;
+	border-bottom: 1px solid #ccc;
+	width: 290px;
+	color: #474747;
+	margin-top: 30px;
+	padding-bottom: 10px;
+}
+
+#venueTitle strong{
+	font-family: "Mensch", Verdana, Tahoma;
+	color: #b979b4;
+	font-weight: 400;
+	font-size: 18pt;
+}
+
+
+
+
+
+
+
+
+/* lists Bands */
+
+#bandListContainer {
+	margin-left: 30px;
+	width: 290px;
+	height: 100%;
+	margin-bottom: 30px;
+}
+
+ul #bandList {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	
+	
+}
+
+.bandItem li {
+	font-family: "Helvetica Neue Lt Std", Verdana, Tahoma;
+	font-size: 12pt;
+	font-weight: 50;
+	height: 92px;
+	border-bottom: 1px solid #ccc;
+	width: 290px;
+	padding-top: 15px;
+}
+
+.bandItem:hover {
+	background-color: #f1f1f1;
+	box-shadow: 0 0 2px #ccc;
+	border: none;
+}
+
+.bandThumbnail {
+	width: 74px;
+	height: 74px;
+	
+}
+
+.bandPreviewText {
+	font-size: 10pt;
+	padding-left: 20px;
+	width: 130px;
+	height: 74px;
+	padding-top: 10px;
+	color: #000;
+	font-weight: 200;
+	line-height: 15px;
+	
+}
+
+strong {
+	font-size: 14pt;
+	font-weight: 300;
+}
+
+
+.selectBox {
+	width: 290px;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+
+}
+
+
+#bandTitle {
+	font-family: "Mensch", Verdana, Tahoma;
+	font-size: 18pt;
+	font-weight: 400;
+	height: 40px;
+	border-bottom: 1px solid #ccc;
+	width: 290px;
+	color: #474747;
+	margin-top: 30px;
+	padding-bottom: 10px;
+}
+
+#bandTitle strong{
+	font-family: "Mensch", Verdana, Tahoma;
+	color: #b979b4;
+	font-weight: 400;
+	font-size: 18pt;
+}
+
+
+
+
+/* //////////     MAP INFORMATION UNDER MAP  /////////// */
+
+.unselectable {
+    -moz-user-select: none; /* for FireFox */
+    -webkit-user-select: none; /* for Chrome and Safari */
+    -khtml-user-select: none; /* probably old webkit browsers, but new support it too */
+    user-select: none; /* for future CSS3 compliant browsers */
+}
+
+.dateText input {
+
+}
+
+#field_name {
+	width: 150px;
+	height: 20px;
+	padding: 0px;
+	margin: 0px;
+
+
+}
+
+
+#mapinfo {
+	background-color: #CCCCCC;
+	color: #464646;
+	height: 60px;
+	padding-top: 10px;
+	padding-left: 40px;
+	font-family: "Mensch", Verdana, Tahoma;
+}
+
+#mapinfo input {
+	width: 210px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+
+
+
+#headerRight {
+	color: #FFF;
+	font-family: "Mensch", Verdana, Tahoma;
+	font-size: 14px;
+	padding: 20px;
+}
+
+
+
+/*  Overlays  */
+
+
+
+  #facebox {
+ 
+    /* overlay is hidden before loading */
+    display:none;
+ 
+    /* standard decorations */
+    margin-top: -175px;
+    width:500px;
+    
+    border:2px solid #4c4c4c;
+ 
+    /* for modern browsers use semi-transparent color on the border. nice! */
+    border:8px solid rgba(82, 82, 82, 0.698);
+ 
+    /* hot CSS3 features for mozilla and webkit-based browsers (rounded borders) */
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+  }
+ 
+  #facebox div {
+  	
+  	line-height: 30px;
+    padding:10px;
+    border:1px solid #4c4c4c;
+    background-color:#fff;
+    font-family:"Helvetica Neue Lt Std",tahoma,verdana,arial,sans-serif;
+    font-weight: 200;
+  }
+ 
+  #facebox h2 {
+    margin:-11px;
+    margin-bottom:0px;
+    color:#fff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#34647c), to(#1f3655));
+	background: -moz-linear-gradient(top, #34647c, #1f3655);
+    padding:10px 10px 5px 10px;
+    border:1px solid #4c4c4c;
+    font-size:24px;
+    font-family: "Mensch", Verdana, Tahoma;
+    font-weight: 400;
+  }
+
+
+
+  #facebox strong {
+	font-family: "Mensch", Verdana, Tahoma;
+    font-weight: 400;
+    text-align:center;
+    font-size:24px;
+
+
+  }
+
+  #facebox span {
+    font-weight: 800;
+
+
+
+  }
+
+  #facebox p {
+	padding: 20px;
+	margin-bottom: -30px;
+
+
+  }
+
+
+
+  /* last Page Overlay  */
+
+  #triggers {
+  text-align:center;
+  }
+
+  #triggers img {
+	  padding:0;
+      margin:0;
+      border:none;
+      background:none;
+      cursor:pointer;
+      float: right;
+
+  }
+
+.simple_overlay {
+ 
+    /* must be initially hidden */
+    display:none;
+ 
+    /* standard decorations */
+    width:500px;
+    height: auto;
+    background-color:white;
+    border:2px solid #4c4c4c;
+ 
+    /* for modern browsers use semi-transparent color on the border. nice! */
+    border:8px solid rgba(82, 82, 82, 0.698);
+ 
+    /* hot CSS3 features for mozilla and webkit-based browsers (rounded borders) */
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;
+}
+ 
+/* close button positioned on upper right corner */
+
+
+    /* styling for elements inside overlay */
+  .details {
+  line-height: 30px;
+    padding: 0px 10px 0px 10px;
+    border:1px solid #4c4c4c;
+    background-color:#fff;
+    font-family:"Helvetica Neue Lt Std",tahoma,verdana,arial,sans-serif;
+    font-weight: 200;
+  }
+
+  .details h3 {
+     margin:-11px;
+     margin-top: 0px;
+    color:#fff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#34647c), to(#1f3655));
+    padding:5px 10px;
+    border:1px solid #4c4c4c;
+    font-size:21px;
+    font-family: "Mensch", Verdana, Tahoma;
+    font-weight: 200;
+  }
+
+  .details h4 {
+	font-family: "Mensch", Verdana, Tahoma;
+    font-weight: 400;
+    font-size:24px;
+    margin-bottom: -10px;
+    padding-left: 20px;
+
+
+  }
+
+    .details p {
+
+    padding-left: 20px;
+
+
+  }
+
+
+  button {
+	background-color: #fff;
+	border: none;
+	cursor: pointer;
+	margin-top: -60px;
+	margin-left: -12px;
+
+  }
+
+  #finishBtn {
+	width: 200px;
+	height: auto;
+	margin-left: 15px;
+
+  }
+
+  #two_name {
+	color: #b979b4;
+	font-weight: 400;
+	margin-top: 4px;
+
+  }
+
+
+   #three_name {
+	color: #b979b4;
+	font-weight: 400;
+	margin-top: 4px;
+
+  }
+
+   #four_name {
+	color: #b979b4;
+	font-weight: 400;
+	margin-top: 4px;
+
+  }
+
